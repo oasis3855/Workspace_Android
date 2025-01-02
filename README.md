@@ -6,9 +6,21 @@
 <br/>
 
 目次
+- [アクティビティ間のデータ受け渡し方法のメモ](#アクティビティ間のデータ受け渡し方法のメモ)
 - [画面の明るさ設定方法、スリープ抑止の設定方法のメモ](#画面の明るさ設定方法スリープ抑止の設定方法のメモ)
 - [ユーザ入力インターフェース（ヴィジェット）のメモ](#ユーザ入力インターフェースヴィジェットのメモ)
 - [画面スリープから復帰する方法のメモ](#画面スリープから復帰する方法のメモ)
+
+<br/>
+<br/>
+
+### アクティビティ間のデータ受け渡し方法のメモ
+
+アクティビティを利用してサブ画面を起動する方法。また、メイン画面とサブ画面間でのデータ受け渡し方法のメモ
+
+- [サブ・アクティビティ 目次](./Activity_Subscreen/)
+  - [サブ・アクティビティを起動する](./Activity_Subscreen/ActivitySubscreenTest01/) (2025/01/03)
+  - [サブ・アクティビティとの間でデータの受け渡し](./Activity_Subscreen/ActivitySubscreenTest02/) (2025/01/03)
 
 <br/>
 <br/>
@@ -27,8 +39,8 @@
 AlertDialog（メッセージボックス、テキストボックス、リスト、シークバー等）の作成方法のメモ
 
 - [AlertDialog 目次](./UserInterface_Widget/)
-  - [その1） Ok・Yes/Noメッセージボックス、テキストボックス](./UserInterface_Widget/AlertDialogTest01/)
-  - [その2）リスト、スイッチ、シークバー](./UserInterface_Widget/AlertDialogTest02/)
+  - [その1） Ok・Yes/Noメッセージボックス、テキストボックス](./UserInterface_Widget/AlertDialogTest01/) (2024/12/31)
+  - [その2）リスト、スイッチ、シークバー](./UserInterface_Widget/AlertDialogTest02/) (2024/12/31)
 
 <br/>
 <br/>

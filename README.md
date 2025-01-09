@@ -50,7 +50,7 @@ AlertDialog（メッセージボックス、テキストボックス、リスト
 
 - [AlertDialog 目次](./UserInterface_Widget/)
   - [その1） Ok・Yes/Noメッセージボックス、テキストボックス](./UserInterface_Widget/AlertDialogTest01/) (2024/12/31)
-  - [その2）リスト、スイッチ、シークバー](./UserInterface_Widget/AlertDialogTest02/) (2024/12/31)
+  - [その2）リスト、スイッチ、シークバー](./UserInterface_Widget/AlertDialogTest02/) (2025/01/09)
 
 <br/>
 <br/>

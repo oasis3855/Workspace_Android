@@ -6,7 +6,7 @@
 <br />
 <br />
 
-Last Updated : 2024/12/31
+Last Updated : 2025/01/09
 
 - [概要](#概要)
 - [ソースコード](#ソースコード)
@@ -149,6 +149,49 @@ new AlertDialog.Builder(this)
                     str += idxChecked[j] ? "ON " : "OFF ";
                 }
                 Toast toast = Toast.makeText(MainActivity.this, "チェック状態 : " + str, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        })
+        .show();
+```
+
+<br />
+<br />
+
+### スピナー
+
+ドロップダウン・リストのことだが、選択肢の表示形式を「択一リスト風」「ラジオボタン風」など切り替えることもできる。
+
+![スピナー](./Screenshot-spinner.jpg)
+
+表示形式の切り替えは adapter.setDropDownViewResource の引数で指定する。主なものは…
+
+- simple_spinner_dropdown_item : 択一リスト風
+- simple_spinner_item : 伝統的なドロップダウン・リスト
+- simple_list_item_checked : チェックボックス風
+- simple_list_item_single_choice : ラジオボタン風
+
+応用編として、複数選択可能名表示形式などもある。
+
+```java
+// 選択肢をString配列に格納する
+final String[] items = new String[20];
+for (int i = 0; i < 20; i++)
+    items[i] = String.format("選択肢 %d", i + 1);
+// ArrayAdapterを作成し、選択肢の配列を紐付け
+ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// スピナーを定義
+Spinner spinner = new Spinner(this);
+spinner.setAdapter(adapter);
+// Alert Dialogを構築・表示
+new AlertDialog.Builder(this)
+        .setTitle("スピナー AlertDialog")
+        .setView(spinner)
+        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast toast = Toast.makeText(MainActivity.this, "選択 : " + spinner.getSelectedItem(), Toast.LENGTH_LONG);
                 toast.show();
             }
         })

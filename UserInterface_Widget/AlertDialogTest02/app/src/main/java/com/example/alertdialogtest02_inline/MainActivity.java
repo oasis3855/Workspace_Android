@@ -11,10 +11,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonSeekBar).setOnClickListener(this);
         findViewById(R.id.buttonRatingBar).setOnClickListener(this);
         findViewById(R.id.buttonCalendarView).setOnClickListener(this);
+        findViewById(R.id.buttonSpinner).setOnClickListener(this);
     }
 
     // *****
@@ -70,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             showAlertDialog_RatingBar();
         } else if (id == R.id.buttonCalendarView) {
             showAlertDialog_CalendarView();
+        } else if (id == R.id.buttonSpinner) {
+            showAlertDialog_Spinner();
         }
     }
 
@@ -176,6 +181,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 })
                 .show();
     }
+
+    // *****
+    // buttonSpinner押下したときに表示するAlertDialog
+    // スピナーを表示（選択肢より1つだけ選択できる）。
+    private void showAlertDialog_Spinner() {
+        // 選択肢をString配列に格納する
+        final String[] items = new String[20];
+        for (int i = 0; i < 20; i++)
+            items[i] = String.format("選択肢 %d", i + 1);
+        // ArrayAdapterを作成し、選択肢の配列を紐付け
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_list_item_checked);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
+        // スピナーを定義
+        Spinner spinner = new Spinner(this);
+        spinner.setAdapter(adapter);
+        // Alert Dialogを構築・表示
+        new AlertDialog.Builder(this)
+                .setTitle("スピナー AlertDialog")
+                .setView(spinner)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast toast = Toast.makeText(MainActivity.this, "選択 : " + spinner.getSelectedItem(), Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast toast = Toast.makeText(MainActivity.this, "キャンセル", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                })
+                .show();
+    }
+
 
     // *****
     // buttonSwitch押下したときに表示するAlertDialog

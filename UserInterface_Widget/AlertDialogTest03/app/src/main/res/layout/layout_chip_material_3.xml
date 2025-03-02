@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textLabelTitle01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Material 3スタイルのChip"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         >
+<!--        app:singleSelection="true"-->
+
+        <!--
+        Material 2 ドキュメント
+            https://m2.material.io/components/chips/android
+        Material 3 ドキュメント
+            https://m3.material.io/components/chips/overview
+            https://github.com/material-components/material-components-android/blob/master/docs/components/Chip.md
+        Choice には Styleの指定が必須
+            ***** Material 2 デザイン
+            Entry chip（テキスト入力ヘルプ用。chipIcon,checkedIcon,closeIcon,checkable） : @style/Widget.MaterialComponents.Chip.Entry
+            Choice chip（選択肢ON/OFF用。checkable） : @style/Widget.MaterialComponents.Chip.Choice
+            Filter chip（選択肢ON/OFF用。checkedIcon,checkable） : @style/Widget.MaterialComponents.Chip.Filter
+            Action chip（起動ボタン用。chipIcon）: @style/Widget.MaterialComponents.Chip.Action
+            ***** Material 3 デザイン
+            Assist chips（起動ボタン用。ボタン左端 任意アイコン）: @style/Widget.Material3.Chip.Assist[.Elevated]
+            Filter chips（選択肢ON/OFF用。ボタン左端チェック印ON/OFF）: @style/Widget.Material3.Chip.Filter[.Elevated]
+            Input chips（テキスト入力ヘルプ用。ボタン右端 × アイコン）: @style/Widget.Material3.Chip.Input[.Elevated]
+            Suggestion chips（起動ボタン用）: @style/Widget.Material3.Chip.Suggestion[.Elevated]
+        -->
+
+        <!--
+        デフォルトで表示されるアイコン
+            chipIcon : Entry Chip, Assist Chip
+            checkedIcon : Entry Chip, Filter Chip
+            closeIcon : Entry Chip
+        強制的にアイコン類を表示する方法
+            chipIconを強制表示する
+                app:chipIcon="@drawable/png_filename_body"
+                app:chipIconVisible="true"
+            checkedIconを強制表示する
+                app:checkedIconVisible="true"
+                android:checked="true" : 初期値でチェックをつける場合
+            closeIconを強制表示する
+                app:closeIconVisible="true"
+        Googleのアイコンライブラリ
+            アイコンPNGは https://fonts.google.com/icons?icon.size=24&icon.color=%23e8eaed からダウンロードし res/drawable に置く
+            標準サイズは 18dp
+        -->
+
+        <!-- Material 3 : Input Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Input"
+            android:text="Input" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Input"
+            android:text="Input"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Input.Elevated"
+            android:text="Input-E" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Input.Elevated"
+            android:text="Input-E"
+            android:checked="true" />
+
+        <!-- Material 3 : Filter Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:text="Filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:text="Filter"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Filter.Elevated"
+            android:text="Filter-E" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Filter.Elevated"
+            android:text="Filter-E"
+            android:checked="true" />
+
+
+        <!-- Material 3 : Assist Chip -->
+        <!-- Assist Chip はデフォルトでcheckedIconは表示されない
+             android:checkable="true" を指定して強制的にチェック可能となる -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:text="Assist"
+            app:chipIcon="@drawable/settings_18dp"
+            app:iconStartPadding="10dp"
+            android:checkable="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Assist.Elevated"
+            android:text="Assist-E"
+            app:chipIcon="@drawable/settings_18dp"
+            app:iconStartPadding="10dp"
+            android:checkable="true" />
+
+        <!-- Material 3 : Suggestion Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:text="Suggestion" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:text="Suggestion"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+            android:text="Suggestion-E" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+            android:text="Suggestion-E"
+            android:checked="true" />
+
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+</LinearLayout>

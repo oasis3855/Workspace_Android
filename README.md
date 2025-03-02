@@ -51,6 +51,7 @@ AlertDialog（メッセージボックス、テキストボックス、リスト
 - [AlertDialog 目次](./UserInterface_Widget/)
   - [その1） Ok・Yes/Noメッセージボックス、テキストボックス](./UserInterface_Widget/AlertDialogTest01/) (2024/12/31)
   - [その2）リスト、スイッチ、シークバー](./UserInterface_Widget/AlertDialogTest02/) (2025/01/09)
+  - [その3） レイアウトをXMLで記述する方法](./UserInterface_Widget/AlertDialogTest03/) (2025/03/02)
 
 <br/>
 <br/>

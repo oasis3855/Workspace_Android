@@ -6,11 +6,12 @@
 <br />
 <br />
 
-Last Updated : 2025/01/09
+Last Updated : 2025/03/02
 
 - [概要](#概要)
 - [AlertDialogTest01](#alertdialogtest01)
 - [AlertDialogTest02](#alertdialogtest02)
+- [AlertDialogTest03](#alertdialogtest03)
 
 <br />
 <br />
@@ -26,6 +27,8 @@ Last Updated : 2025/01/09
 
 AlertDialogを用いたYes/No/Cancelダイアログや、EditText（テキストボックス）の作成方法。テキストボックスは、英数字限定や日時入力などの機能を付加することもここで説明している。
 
+レイアウトをjava内に記述する方法。
+
 [詳細説明・ソースコード ディレクトリを開く](./AlertDialogTest01/)
 
 <br />
@@ -35,7 +38,20 @@ AlertDialogを用いたYes/No/Cancelダイアログや、EditText（テキスト
 
 AlertDialogを用いたリスト選択・ラジオボタン選択・チェックボックス選択、スライダーによる値入力、カレンダーダイアログの作成方法。
 
+レイアウトをjava内に記述する方法。
+
 [詳細説明・ソースコード ディレクトリを開く](./AlertDialogTest02/)
+
+<br />
+<br />
+
+## AlertDialogTest03
+
+AlertDialogを用いたテキストボックス・リスト選択・ラジオボタン選択・チェックボックス選択、スライダーによる値入力の作成方法。
+
+レイアウトをXMLで記述する方法。
+
+[詳細説明・ソースコード ディレクトリを開く](./AlertDialogTest03/)
 
 <br />
 <br />

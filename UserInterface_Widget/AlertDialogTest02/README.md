@@ -1,4 +1,4 @@
-## AlertDialogを用いたリスト、スライダー等の作成方法<!-- omit in toc -->
+## AlertDialogを用いたリスト、スイッチ、シークバー等の作成方法<!-- omit in toc -->
 
 ---
 [Home](https://oasis3855.github.io/webpage/) > [Software](https://oasis3855.github.io/webpage/software/index.html) > [ソフトウエア開発・PC管理のメモ帳](https://oasis3855.github.io/webpage/software/software_server_memo.html) > [Workspace_Android](../README.md)  > ***UserInterface_Widget*** (this page)

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textLabelTitle01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="ON/OFFを選択してください"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <!--
+    スイッチを実現するためのタグは次の3種類から選択。<Switch>は非推奨警告が出る
+    Switch : <Switch>
+    SwitchMaterial : <com.google.android.material.switchmaterial.SwitchMaterial> : Material 2
+        https://m2.material.io/develop/android/components/switches
+        https://github.com/material-components/material-components-android/blob/master/docs/components/Switch.md
+    SwitchCompat : <androidx.appcompat.widget.SwitchCompat>
+    MaterialSwitch : <com.google.android.material.materialswitch.MaterialSwitch> : Material 3
+        https://m3.material.io/components/switch/guidelines
+    Googleのアイコンライブラリ
+        アイコンPNGは https://fonts.google.com/icons?icon.size=24&icon.color=%23e8eaed からダウンロードし res/drawable に置く
+        標準サイズは 16dp
+     -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="スイッチ (Material 2)" />
+
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="スイッチ (Material 3)" />
+        <!-- ここでアイコンを設定すると、ON/OFFに関わらず表示されてしまう
+        app:thumbIcon="@drawable/check_16dp"
+        -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textLabel01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="2"
+            android:text="トグルボタン" />
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/togglebutton01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -6,7 +6,7 @@
 <br />
 <br />
 
-Last Updated : 2025/05/31
+Last Updated : 2025/06/14
 
 - [概要](#概要)
 - [ソースコード](#ソースコード)
@@ -20,9 +20,10 @@ Last Updated : 2025/05/31
 - [非同期処理](#非同期処理)
   - [Executorを使う](#executorを使う)
   - [ExecutorServiceを使う](#executorserviceを使う)
-- [エラートラップ](#エラートラップ)
   - [Threadを使う](#threadを使う)
 - [非同期タスク（ExecutorやThread）の中からHandlerを使ってUIを更新する](#非同期タスクexecutorやthreadの中からhandlerを使ってuiを更新する)
+- [エラートラップ](#エラートラップ)
+- [バージョン情報](#バージョン情報)
 
 
 <br />
@@ -226,35 +227,6 @@ executorService.shutdown();
 <br />
 <br />
 
-## エラートラップ
-
-try ... catch でエラートラップすること。
-
-```java
-Thread thread = new Thread(new Runnable() {
-    @Override
-    public void run() {
-        try {
-            // ここにHTTP送受信処理を記述する
-            URL url = new URL("https://www.example.com/index.html");
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            // 〜 中略 〜
-            connection.disconnect();
-        } catch (Exception e) {
-            // エラー処理
-            e.printStackTrace();
-        }
-    }
-});
-thread.start();
-```
-
-![エラートラップの実行画面例](./Screenshot_05_errorconnect.png)
-![エラートラップの実行画面例](./Screenshot_06_timeout.png)
-
-<br />
-<br />
-
 ### Threadを使う
 
 ```java
@@ -303,3 +275,40 @@ Thread thread = new Thread(new Runnable() {
 });
 thread.start();
 ```
+
+## エラートラップ
+
+try ... catch でエラートラップすること。
+
+```java
+Thread thread = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        try {
+            // ここにHTTP送受信処理を記述する
+            URL url = new URL("https://www.example.com/index.html");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            // 〜 中略 〜
+            connection.disconnect();
+        } catch (Exception e) {
+            // エラー処理
+            e.printStackTrace();
+        }
+    }
+});
+thread.start();
+```
+
+![エラートラップの実行画面例](./Screenshot_05_errorconnect.png)
+![エラートラップの実行画面例](./Screenshot_06_timeout.png)
+
+<br />
+<br />
+
+## バージョン情報
+
+- 2025/05/31
+  - 当初
+- 2025/06/14
+  - close, disconnect を try ... finally で処理
+  - POSTの場合、HTTP HEADでResponseCodeを確認
